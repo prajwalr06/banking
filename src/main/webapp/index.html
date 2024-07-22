@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            min-height: 70px;
+            border-bottom: 3px solid #ccc;
+            position: relative; /* Added */
+        }
+        header h1 {
+            margin: 0;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        .header-buttons a {
+            font-size: 16px;
+            color: #fff;
+            background: #007bff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 10px; /* Spacing between buttons */
+        }
+        .header-buttons a:hover {
+            background: #0056b3;
+        }
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .movie-list, .theater-list {
+            list-style: none;
+            padding: 0;
+        }
+        .movie-list li, .theater-list li {
+            background: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            font-size: 16px;
+            color: #fff;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #555;
+        }
+        .seats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .seat {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            background: #6c757d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .seat.available {
+            background: #28a745;
+        }
+        .seat.booked {
+            background: #dc3545;
+        }
+        .seat:hover {
+            background: #495057;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Movie Booking System</h1>
+            <div class="header-buttons">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Tickets Section -->
+        <div class="section" id="tickets">
+            <h2>Book Your Tickets</h2>
+            <p>Select a movie, theater, and time to book your tickets.</p>
+            <a href="booktickets.html" class="button">Book Tickets</a>
+        </div>
+
+        <!-- Movie Releases Section -->
+        <div class="section" id="releases">
+            <h2>Movie Releases</h2>
+            <ul class="movie-list">
+                <li>Movie 1 - Release Date: July 24, 2024</li>
+                <li>Movie 2 - Release Date: August 1, 2024</li>
+                <li>Movie 3 - Release Date: August 15, 2024</li>
+                <li>Movie 4 - Release Date: September 1, 2024</li>
+            </ul>
+        </div>
+
+        <!-- Upcoming Movies Section -->
+        <div class="section" id="upcoming">
+            <h2>Upcoming Movies</h2>
+            <ul class="movie-list">
+                <li>Upcoming Movie 1 - Release Date: September 15, 2024</li>
+                <li>Upcoming Movie 2 - Release Date: October 10, 2024</li>
+                <li>Upcoming Movie 3 - Release Date: November 5, 2024</li>
+                <li>Upcoming Movie 4 - Release Date: December 20, 2024</li>
+            </ul>
+        </div>
+
+        <!-- Theaters List Section -->
+        <div class="section" id="theaters">
+            <h2>List of Theaters</h2>
+            <ul class="theater-list">
+                <li>Theater 1 - Address: 123 Main St</li>
+                <li>Theater 2 - Address: 456 Elm St</li>
+                <li>Theater 3 - Address: 789 Oak St</li>
+                <li>Theater 4 - Address: 101 Pine St</li>
+            </ul>
+        </div>
+
+        <!-- Seat Selection Section -->
+        <div class="section" id="seats">
+            <h2>Select Your Seats</h2>
+            <div class="seats">
+                <div class="seat available">1</div>
+                <div class="seat available">2</div>
+                <div class="seat booked">3</div>
+                <div class="seat available">4</div>
+                <div class="seat available">5</div>
+                <div class="seat available">6</div>
+                <div class="seat booked">7</div>
+                <div class="seat available">8</div>
+                <div class="seat available">9</div>
+                <div class="seat available">10</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

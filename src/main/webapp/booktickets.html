@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: 3px solid #ccc;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            font-size: 16px;
+            color: #fff;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #555;
+        }
+        .seats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .seat {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            background: #6c757d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .seat.available {
+            background: #28a745;
+        }
+        .seat.booked {
+            background: #dc3545;
+        }
+        .seat:hover {
+            background: #495057;
+        }
+        .seat.selected {
+            background: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Book Your Tickets</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Choose Your Movie</h2>
+            <form>
+                <div class="form-group">
+                    <label for="movie">Select Movie:</label>
+                    <select id="movie" name="movie">
+                        <option value="movie1">Movie 1</option>
+                        <option value="movie2">Movie 2</option>
+                        <option value="movie3">Movie 3</option>
+                        <option value="movie4">Movie 4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="theater">Select Theater:</label>
+                    <select id="theater" name="theater">
+                        <option value="theater1">Theater 1</option>
+                        <option value="theater2">Theater 2</option>
+                        <option value="theater3">Theater 3</option>
+                        <option value="theater4">Theater 4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Select Time:</label>
+                    <select id="time" name="time">
+                        <option value="1pm">1:00 PM</option>
+                        <option value="4pm">4:00 PM</option>
+                        <option value="7pm">7:00 PM</option>
+                        <option value="10pm">10:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Seats:</label>
+                    <div class="seats">
+                        <div class="seat available">1</div>
+                        <div class="seat available">2</div>
+                        <div class="seat booked">3</div>
+                        <div class="seat available">4</div>
+                        <div class="seat available">5</div>
+                        <div class="seat available">6</div>
+                        <div class="seat booked">7</div>
+                        <div class="seat available">8</div>
+                        <div class="seat available">9</div>
+                        <div class="seat available">10</div>
+                    </div>
+                </div>
+                <a href="#" class="button">Book Now</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Simple script to toggle seat selection
+        document.querySelectorAll('.seat.available').forEach(seat => {
+            seat.addEventListener('click', function() {
+                if (seat.classList.contains('selected')) {
+                    seat.classList.remove('selected');
+                } else {
+                    seat.classList.add('selected');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
